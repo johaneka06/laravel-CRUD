@@ -23,8 +23,21 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::post('/auth', function() {
+    //Authorization login. Will be moved using controller file
+});
+
 Route::get('/register', function () {
     return view('register');
+});
+
+Route::post('/register', function() {
+    //Register user. Will be moved using controller file
+});
+
+Route::get('/logout', function() {
+    //Logout. Will be moved using controller file
+    return redirect('/');
 });
 
 Route::post('/insert', function() {
