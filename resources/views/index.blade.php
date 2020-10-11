@@ -27,15 +27,18 @@
         <td>@mdo</td>
         @if(Auth::check())
         <td>
-          <a href="#" class="badge badge-secondary">Edit</a>
-          <a href="#" class="badge badge-danger">Delete</a>
+          <a href="{{ url('/item/1') }}" class="badge badge-secondary">Update</a>
+          <a href="{{ url('/item/1/delete') }}" class="badge badge-danger">Delete</a>
         </td>
         @endif
       </tr>
     </tbody>
   </table>
 
+  <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#staticBackdrop">Insert new data</button>
+
 </div>
 
+@include('addItem')
 
 @endsection
