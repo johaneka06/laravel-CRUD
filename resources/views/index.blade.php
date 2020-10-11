@@ -5,16 +5,16 @@
 @section('content')
 <div class="container text-center mt-5">
 
-  <h3>Lists:</h3>
+  <h3>Welcome, guest!</h3>
 
   <table class="table table-striped mt-3">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-        @if(Auth::check())
+        <th scope="col">Product Name</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Product Stock</th>
+        @if(Auth::user() != null)
         <th scope="col">Actions</th>
         @endif
       </tr>
@@ -25,7 +25,7 @@
         <td>Mark</td>
         <td>Otto</td>
         <td>@mdo</td>
-        @if(Auth::check())
+        @if(Auth::user() != null)
         <td>
           <a href="{{ url('/item/1') }}" class="badge badge-secondary">Update</a>
           <a href="{{ url('/item/1/delete') }}" class="badge badge-danger">Delete</a>
@@ -34,9 +34,9 @@
       </tr>
     </tbody>
   </table>
-
+  @if(Auth::user() != null)
   <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#staticBackdrop">Insert new data</button>
-
+  @endif
 </div>
 
 @include('addItem')
